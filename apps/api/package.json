@@ -1,0 +1,40 @@
+{
+  "name": "@future-stars/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "pnpm --filter @future-stars/shared build",
+    "dev": "tsx watch src/server.ts",
+    "prebuild": "pnpm --filter @future-stars/shared build",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/server.js",
+    "pretest": "pnpm --filter @future-stars/shared build",
+    "test": "vitest run",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@future-stars/shared": "workspace:*",
+    "@prisma/client": "^6.8.2",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "zod": "^3.25.28"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/supertest": "^6.0.3",
+    "prisma": "^6.8.2",
+    "supertest": "^7.1.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

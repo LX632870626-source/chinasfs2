@@ -1,0 +1,135 @@
+page {
+  min-height: 100%;
+  background: #f4f7f6;
+  color: #17202a;
+  font-family: "Microsoft YaHei", system-ui, sans-serif;
+}
+
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 30px;
+  border-radius: 8px;
+  background: #0f1720;
+  color: #ffffff;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.hero-copy {
+  color: #d7e5df;
+  font-size: 26px;
+  line-height: 1.45;
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.link-button {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: #0f7b5f;
+  font-size: 26px;
+  line-height: 1.6;
+}
+
+.primary-button {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 8px;
+  background: #0f7b5f;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 2.5;
+}
+
+.card {
+  box-sizing: border-box;
+  margin-top: 14px;
+  padding: 20px;
+  border: 1px solid #dde6e2;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.card-title {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.muted {
+  margin-top: 8px;
+  color: #667085;
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.body {
+  margin-top: 10px;
+  color: #344054;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.empty {
+  padding: 28px 0;
+  color: #667085;
+  font-size: 26px;
+  text-align: center;
+}
+
+.input,
+.textarea,
+.picker-field {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 84px;
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17202a;
+  font-size: 28px;
+}
+
+.textarea {
+  min-height: 220px;
+  line-height: 1.45;
+}
+
+.form-actions {
+  margin-top: 22px;
+}

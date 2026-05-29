@@ -1,0 +1,19 @@
+{
+  "name": "china-football-future-stars",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "dev:api": "pnpm --filter @future-stars/api dev",
+    "dev:admin": "pnpm --filter @future-stars/admin dev",
+    "dev:miniapp": "pnpm --filter @future-stars/miniapp dev:tt"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.24",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "packageManager": "pnpm@10.11.0"
+}
