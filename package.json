@@ -8,7 +8,9 @@
     "lint": "pnpm -r lint",
     "dev:api": "pnpm --filter @future-stars/api dev",
     "dev:admin": "pnpm --filter @future-stars/admin dev",
-    "dev:miniapp": "pnpm --filter @future-stars/miniapp dev:tt"
+    "dev:miniapp": "pnpm --filter @future-stars/miniapp dev:tt",
+    "dev:web": "pnpm --filter @future-stars/web dev",
+    "build:web": "pnpm --filter @future-stars/web build"
   },
   "devDependencies": {
     "@types/node": "^22.15.24",

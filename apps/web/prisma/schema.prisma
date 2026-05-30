@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id             String   @id @default(cuid())
+  name           String
+  ageGroup       String
+  position       String
+  teamName       String
+  region         String
+  traitsJson     String
+  bio            String
+  coverUrl       String?
+  publicVideoUrl String?
+  isFeatured     Boolean  @default(false)
+  featureOrder   Int      @default(0)
+  birthday       String?
+  heightCm       Int?
+  weightKg       Int?
+  dominantFoot   String?
+  schoolOrOrg    String?
+  contactName    String?
+  contactPhone   String?
+  source         String?
+  adminNotes     String?
+  publicLevel    String   @default("PUBLIC")
+  isPublished    Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  name        String
+  ageGroup    String
+  region      String
+  location    String
+  startsAt    DateTime
+  endsAt      DateTime?
+  status      String
+  summary     String
+  coverUrl    String?
+  officialUrl String?
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  matches     Match[]
+}
+
+model Match {
+  id                    String   @id @default(cuid())
+  eventId               String
+  startsAt              DateTime
+  homeTeam              String
+  awayTeam              String
+  score                 String?
+  status                String
+  officialUrl           String?
+  featuredPlayerIdsJson String   @default("[]")
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  event                 Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+model Submission {
+  id            String   @id @default(cuid())
+  type          String
+  contactName   String
+  contactPhone  String
+  content       String
+  attachmentUrl String?
+  status        String   @default("PENDING")
+  adminNotes    String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  username     String    @unique
+  passwordHash String
+  status       String    @default("ACTIVE")
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+}

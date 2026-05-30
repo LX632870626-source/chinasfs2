@@ -72,6 +72,34 @@ when building or running the mini-app so requests target the deployed API base.
 Open the generated `apps/miniapp/dist` directory in the Douyin mini-app
 developer tool.
 
+## Run Web/Vercel App
+
+The Web version lives in `apps/web`.
+
+Set `DATABASE_URL` for a Postgres database, then run from the workspace root:
+
+```powershell
+pnpm --filter @future-stars/web db:generate
+pnpm --filter @future-stars/web db:migrate --name init
+pnpm --filter @future-stars/web db:seed
+pnpm dev:web
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+For Vercel deployment, configure:
+
+- `DATABASE_URL`
+- `ADMIN_USERNAME`
+- `ADMIN_PASSWORD_HASH`
+- `SESSION_SECRET`
+
+See `docs/vercel-deployment.md` for Vercel and Neon setup.
+
 ## Test And Build
 
 Run from the workspace root:
